@@ -2,3 +2,4 @@ Pillow
 Django
 twilio
 python-dotenv
+gunicorn
