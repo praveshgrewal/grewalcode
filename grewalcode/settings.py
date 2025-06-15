@@ -120,7 +120,8 @@ USE_I18N = True
 
 USE_TZ = True
 
-ALLOWED_HOSTS = ['grewalcode.live']
+ALLOWED_HOSTS = ['grewalcode.live', 'www.grewalcode.live']
+
 
 
 # Static files (CSS, JavaScript, Images)
