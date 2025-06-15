@@ -3,3 +3,4 @@ Django
 twilio
 python-dotenv
 gunicorn
+whitenoise
