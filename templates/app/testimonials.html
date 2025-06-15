@@ -1,0 +1,188 @@
+{% load static %}
+{% load form_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testimonials - GrewalCode</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+</head>
+<body>
+
+<!-- Navbar --> 
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+        <button onclick="window.location.href='/'" style="background: none; border: none; font-size: inherit; color: inherit; cursor: pointer;">
+            <h2>GrewalCode</h2>
+        </button>
+    </div>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="{% url 'team' %}" class="nav-link">Team</a></li>
+      <li class="nav-item"><a href="{% url 'testimonials' %}" class="nav-link active">Testimonials</a></li>
+      <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <h1>What Our Students Say</h1>
+    <p>Real stories from our successful graduates</p>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials-grid">
+      {% for t in testimonials %}
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-content">
+          <div class="stars">
+            {% for _ in "12345"|slice:":t.rating" %}
+              <i class="fas fa-star"></i>
+            {% endfor %}
+          </div>
+          <p>"{{ t.message }}"</p>
+        </div>
+        <div class="testimonial-author">
+          <img src="{{ t.photo.url }}" alt="{{ t.name }}" style="border-radius: 50%; width: 60px; height: 60px;" />
+          <div class="author-info">
+            <h4>{{ t.name }}</h4>
+            <p>{{ t.role }}</p>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p>No testimonials yet. Be the first to submit one!</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial Submission Form -->
+<section class="testimonial-form-section">
+    <div class="container">
+      <h2 style="font-size: 2rem; font-weight: 600; margin-bottom: 1rem;">Submit Your Testimonial</h2>
+      
+      <form method="post" enctype="multipart/form-data" class="testimonial-form" style="max-width: 600px;">
+        {% csrf_token %}
+  
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="id_name" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Name:</label>
+          {{ form.name|add_class:"input-field" }}
+        </div>
+  
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="id_role" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Role:</label>
+          {{ form.role|add_class:"input-field" }}
+        </div>
+  
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="id_rating" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Rating (1-5):</label>
+          {{ form.rating|add_class:"input-field" }}
+        </div>
+  
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="id_message" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Message:</label>
+          {{ form.message|add_class:"input-field" }}
+        </div>
+  
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label for="id_photo" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Photo (optional):</label>
+          {{ form.photo }}
+        </div>
+  
+        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 2rem; background-color: #2563eb; color: white; border: none; border-radius: 30px; font-weight: bold; cursor: pointer;">
+          Submit Testimonial
+        </button>
+      </form>
+    </div>
+  </section>
+  
+<!-- Stats Section -->
+<section class="testimonial-stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <h3>4.9/5</h3>
+                <p>Average Rating</p>
+            </div>
+            <!-- <div class="stat-item fade-in">
+                <h3>95%</h3>
+                <p>Job Placement Rate</p>
+            </div> -->
+            <div class="stat-item fade-in">
+                <h3>1000+</h3>
+                <p>Happy Students</p>
+            </div>
+            <div class="stat-item fade-in">
+                <h3>98%</h3>
+                <p>Course Completion Rate</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Join Our Success Stories?</h2>
+            <p>Start your journey with GrewalCode today and become our next success story</p>
+            <div class="cta-buttons">
+                <a href="services.html" class="btn btn-primary">View Our Courses</a>
+                <a href="contact.html" class="btn btn-secondary">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>GrewalCode</h3>
+        <p>Empowering careers through expert training and innovative development solutions.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/codegrewal/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@grewalcode" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/in/pravesh-grewal/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'team' %}">Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <p><i class="fas fa-envelope"></i> grewalcode@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +91 8683886798</p>
+        <p><i class="fas fa-map-marker-alt"></i> Noida, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 GrewalCode. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="{% static 'app/js/script.js' %}"></script>
+</body>
+</html>

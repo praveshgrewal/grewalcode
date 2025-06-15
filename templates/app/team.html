@@ -1,0 +1,261 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - GrewalCode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <button onclick="window.location.href='/'" style="background: none; border: none; font-size: inherit; color: inherit; cursor: pointer;">
+                <h2>GrewalCode</h2>
+            </button>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="{% url 'index' %}" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'about' %}" class="nav-link {% if request.path == '/about/' %}active{% endif %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'services' %}" class="nav-link {% if request.path == '/services/' %}active{% endif %}">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'team' %}" class="nav-link {% if request.path == '/team/' %}active{% endif %}">Team</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'testimonials' %}" class="nav-link {% if request.path == '/testimonials/' %}active{% endif %}">Testimonials</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'blog' %}" class="nav-link {% if request.path == '/blog/' %}active{% endif %}">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'contact' %}" class="nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Team</h1>
+            <p>Meet the experts behind GrewalCode's success</p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="{% static 'app/images/pravesh.jpg' %}" alt="Pravesh Grewal">
+                        <div class="member-overlay">
+                            <a href="https://www.linkedin.com/in/pravesh-grewal/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Pravesh Grewal</h3>
+                        <p class="member-role">Founder & Lead Instructor</p>
+                        <p class="member-bio">Specialist in Python, AI/ML, and Cybersecurity, focused on practical learning and guiding aspiring tech professionals to excel in real-world projects.</p>
+                        <div class="member-skills">
+                            <span>Python</span>
+                            <span>AI/ML</span>
+                            <span>Cybersecurity</span>
+                            <span>Leadership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="{% static 'app/images/kunjesh.jpg' %}" alt="kunjesh">
+                        <div class="member-overlay">
+                            <a href="https://www.linkedin.com/in/kunjesh-ydv/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>kunjesh Yadav</h3>
+                        <p class="member-role">Senior Instructor</p>
+                        <p class="member-bio"> Development Specializes in making complex concepts accessible to students.</p>
+                        <div class="member-skills">
+                            <span>Java</span>
+                            <span>JavaScript</span>
+                            <span>SQL</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="{% static 'app/images/gulshan.jpg' %}" alt="Gulshan Ray">
+                        <div class="member-overlay">
+                            <a href="https://www.linkedin.com/in/gulshan-kumar-255953245/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                           
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Gulshan Ray</h3>
+                        <p class="member-role">Web Development Lead</p>
+                        <p class="member-bio">Full-stack developer with expertise in modern web technologies. Former senior engineer at top tech companies with a passion for teaching clean code practices.</p>
+                        <div class="member-skills">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>JavaScript</span>
+                            <span>Cloud</span>
+                        </div>
+                    </div>
+                </div>
+     <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="{% static 'app/images/ankit.jpg' %}"alt="Ankit Sharma">
+                        <div class="member-overlay">
+                            <a href="https://www.linkedin.com/in/ankit-sharma-b9870917a/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Ankit Sharma</h3>
+                            <p class="member-role">Manager</p>
+                            <p class="member-bio">Experienced leader and published researcher with strong communication and problem-solving abilities.</p>
+                            <div class="member-skills">
+                                <span>Leadership</span>
+                                <span>Team Collaboration</span>
+                                <span>Critical Thinking</span>
+                                <span>Effective Communication</span>
+                            </div>
+
+                    </div>
+                </div>
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="{% static 'app/images/shamshad.jpg' %}" alt="Shamshad">
+                        <div class="member-overlay">
+                            <a href="https://www.linkedin.com/in/shamshad-husain-538212252/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Shamshad Husain</h3>
+                        <p class="member-role">Full Stack Web Developer</p>
+                        <p class="member-bio">
+                            Passionate full stack developer with expertise in building scalable web applications using MERN stack, PHP, and Python. Experienced in responsive design, REST APIs, and database integration.
+                        </p>
+                        <div class="member-skills">
+                            <span>MERN Stack</span>
+                            <span>Tailwind CSS</span>
+                            <span>MySQL</span>
+                            <span>Python</span>
+                            <span>PHP</span>
+                        </div>
+                    </div>
+
+
+           
+
+                <!--<div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Lisa Thompson">
+                        <div class="member-overlay">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Lisa Thompson</h3>
+                        <p class="member-role">Student Success Manager</p>
+                        <p class="member-bio">Dedicated to ensuring student success with background in education and career counseling. Helps students navigate their learning journey and career transitions.</p>
+                        <div class="member-skills">
+                            <span>Student Mentoring</span>
+                            <span>Career Counseling</span>
+                            <span>Project Management</span>
+                            <span>Communication</span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Team Section -->
+    <section class="join-team">
+        <div class="container">
+            <div class="join-team-content">
+                <h2>Join Our Team</h2>
+                <p>We're always looking for passionate educators and industry experts to join our growing team. If you're interested in making a difference in tech education, we'd love to hear from you.</p>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GrewalCode</h3>
+                <p>Empowering careers through expert training and innovative development solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/codegrewal/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@grewalcode" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/pravesh-grewal/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'team' %}">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="{% url 'services' %}">Python Training</a></li>
+                    <li><a href="{% url 'services' %}">Cybersecurity</a></li>
+                    <li><a href="{% url 'services' %}">AI & ML</a></li>
+                    <li><a href="{% url 'services' %}">Web Development</a></li>
+                    <li><a href="{% url 'services' %}">Cloud Computing</a></li>
+                    <li><a href="{% url 'services' %}">Java Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-envelope"></i> grewalcode@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 8683886798</p>
+                <p><i class="fas fa-map-marker-alt"></i> Noida, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GrewalCode. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'app/js/script.js' %}"></script>
+</body>
+</html>

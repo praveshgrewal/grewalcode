@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - GrewalCode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <button onclick="window.location.href='/'" style="background: none; border: none; font-size: inherit; color: inherit; cursor: pointer;">
+                <h2>GrewalCode</h2>
+            </button>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="{% url 'index' %}" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a></li>
+            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link {% if request.path == '/about/' %}active{% endif %}">About</a></li>
+            <li class="nav-item"><a href="{% url 'services' %}" class="nav-link {% if request.path == '/services/' %}active{% endif %}">Services</a></li>
+            <li class="nav-item"><a href="{% url 'team' %}" class="nav-link {% if request.path == '/team/' %}active{% endif %}">Team</a></li>
+            <li class="nav-item"><a href="{% url 'testimonials' %}" class="nav-link {% if request.path == '/testimonials/' %}active{% endif %}">Testimonials</a></li>
+            <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link {% if request.path == '/blog/' %}active{% endif %}">Blog</a></li>
+            <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <p>Ready to start your learning journey? Contact us today!</p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact">
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-info fade-in">
+                <h2>Contact Information</h2>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>grewalcode@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+91 8683886798</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>Noida, India</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Business Hours</h4>
+                        <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/codegrewal/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@grewalcode" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/pravesh-grewal/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form slide-in">
+                <h2>Send us a Message</h2>
+                <!-- Success Message after Form Submission -->
+                {% if messages %}
+                    <div class="alert alert-success">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <form id="contactForm" method="POST" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="training">Training Inquiry</option>
+                            <option value="development">Development Services</option>
+                            <option value="corporate">Corporate Training</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GrewalCode</h3>
+                <p>Empowering careers through expert training and innovative development solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/codegrewal/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@grewalcode" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/pravesh-grewal/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'team' %}">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="{% url 'services' %}">Python Training</a></li>
+                    <li><a href="{% url 'services' %}">Cybersecurity</a></li>
+                    <li><a href="{% url 'services' %}">AI & ML</a></li>
+                    <li><a href="{% url 'services' %}">Web Development</a></li>
+                    <li><a href="{% url 'services' %}">Cloud Computing</a></li>
+                    <li><a href="{% url 'services' %}">Java Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-envelope"></i> grewalcode@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 8683886798</p>
+                <p><i class="fas fa-map-marker-alt"></i> Noida, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GrewalCode. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'app/js/script.js' %}"></script>
+</body>
+</html>

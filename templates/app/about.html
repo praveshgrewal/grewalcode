@@ -1,0 +1,223 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - GrewalCode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container"> 
+        <div class="nav-logo">
+            <button onclick="window.location.href='/'" style="background: none; border: none; font-size: inherit; color: inherit; cursor: pointer;">
+                <h2>GrewalCode</h2>
+            </button>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="{% url 'index' %}" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'about' %}" class="nav-link {% if request.path == '/about/' %}active{% endif %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'services' %}" class="nav-link {% if request.path == '/services/' %}active{% endif %}">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'team' %}" class="nav-link {% if request.path == '/team/' %}active{% endif %}">Team</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'testimonials' %}" class="nav-link {% if request.path == '/testimonials/' %}active{% endif %}">Testimonials</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'blog' %}" class="nav-link {% if request.path == '/blog/' %}active{% endif %}">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'contact' %}" class="nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About GrewalCode</h1>
+            <p>Learn about our mission, vision, and the story behind GrewalCode</p>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder">
+        <div class="container">
+            <div class="founder-content">
+                <div class="founder-image fade-in">
+                    <img src="{% static 'app/images/praveshgrewal.jpg' %}" alt="Pravesh Grewal" class="founder-photo">
+                </div>
+                <div class="founder-info slide-in">
+                    <h2>Meet Pravesh Grewal</h2>
+                        <h3>Founder & Lead Instructor</h3>
+                        <p>Pravesh Grewal is a passionate technology educator, software developer, and the founder of <strong>GrewalCode</strong>. With expertise in Python, cybersecurity, data science, and full-stack web development, he has empowered countless learners to build real-world skills through hands-on projects and practical learning.</p>
+                        <p>Pravesh is a certified cybersecurity professional from IIT Guwahati and has been part of the IBM training program, gaining exposure to industry-grade technologies and best practices. He also holds certifications including AWS Certified Solutions Architect and many others in emerging tech domains.</p>
+                        <p>With GrewalCode, he aims to bridge the gap between theory and industry demands by offering personalized mentorship, real-world project training, and a community-driven learning experience. His teaching approach focuses on clarity, simplicity, and confidence-building—making technology accessible for everyone.</p>
+
+
+                    <div class="founder-achievements">
+                        <div class="achievement">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>1000+ Students Mentored</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-award"></i>
+                            <span>Industry Expert</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-code"></i>
+                            <span>100+ Projects Delivered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card fade-in">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To bridge the gap between academic learning and industry requirements by providing comprehensive, practical training programs that prepare students for successful careers in technology. We are committed to delivering high-quality education that combines theoretical knowledge with hands-on experience.</p>
+                </div>
+                <div class="mv-card fade-in">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To become the leading platform for technology education and professional development, empowering individuals and organizations to thrive in the digital age. We envision a world where quality tech education is accessible to everyone, regardless of their background or location.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card slide-in">
+                    <i class="fas fa-star"></i>
+                    <h4>Excellence</h4>
+                    <p>We strive for excellence in everything we do, from curriculum design to student support.</p>
+                </div>
+                <div class="value-card slide-in">
+                    <i class="fas fa-users"></i>
+                    <h4>Student-Centric</h4>
+                    <p>Our students are at the heart of everything we do. Their success is our success.</p>
+                </div>
+                <div class="value-card slide-in">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Innovation</h4>
+                    <p>We continuously innovate our teaching methods and stay current with industry trends.</p>
+                </div>
+                <div class="value-card slide-in">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Integrity</h4>
+                    <p>We maintain the highest standards of integrity in all our interactions and commitments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="testimonial-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <h3>4.9/5</h3>
+                    <p>Average Rating</p>
+                </div>
+                <!-- <div class="stat-item fade-in">
+                    <h3>95%</h3>
+                    <p>Job Placement Rate</p>
+                </div> -->
+                <div class="stat-item fade-in">
+                    <h3>1000+</h3>
+                    <p>Happy Students</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>98%</h3>
+                    <p>Course Completion Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GrewalCode</h3>
+                <p>Empowering careers through expert training and innovative development solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/codegrewal/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@grewalcode" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/pravesh-grewal/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'team' %}">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="{% url 'services' %}">Python Training</a></li>
+                    <li><a href="{% url 'services' %}">Cybersecurity</a></li>
+                    <li><a href="{% url 'services' %}">AI & ML</a></li>
+                    <li><a href="{% url 'services' %}">Web Development</a></li>
+                    <li><a href="{% url 'services' %}">Cloud Computing</a></li>
+                    <li><a href="{% url 'services' %}">Java Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-envelope"></i> grewalcode@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 8683886798</p>
+                <p><i class="fas fa-map-marker-alt"></i> Noida, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GrewalCode. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'app/js/script.js' %}"></script>
+</body>
+</html>

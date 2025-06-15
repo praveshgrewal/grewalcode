@@ -1,0 +1,232 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrewalCode - Expert Training & Development Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <button onclick="window.location.href='/'" style="background: none; border: none; font-size: inherit; color: inherit; cursor: pointer;">
+                <h2>GrewalCode</h2>
+            </button>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="{% url 'index' %}" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'about' %}" class="nav-link {% if request.path == '/about/' %}active{% endif %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'services' %}" class="nav-link {% if request.path == '/services/' %}active{% endif %}">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'team' %}" class="nav-link {% if request.path == '/team/' %}active{% endif %}">Team</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'testimonials' %}" class="nav-link {% if request.path == '/testimonials/' %}active{% endif %}">Testimonials</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'blog' %}" class="nav-link {% if request.path == '/blog/' %}active{% endif %}">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'contact' %}" class="nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+   
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content fade-in">
+                <h1>Transform Your Career with Expert Training</h1>
+                <p>Master cutting-edge technologies with GrewalCode. From Python to AI, Cybersecurity to Web Development - we provide world-class training and development services.</p>
+                <div class="hero-buttons">
+                    <a href="{% url 'services' %}" class="btn btn-primary">Get Trained by Experts</a>
+                    <a href="{% url 'contact' %}" class="btn btn-secondary">Hire Us for Your Project</a>
+                </div>
+            </div>
+            <div class="hero-image slide-in">
+                <i class="fas fa-code hero-icon"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    
+      
+    
+         
+    <section class="about-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>About GrewalCode</h2>
+                <p>Empowering the next generation of tech professionals</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>
+                        GrewalCode is a premier training and development company founded by Pravesh Grewal,
+                        dedicated to bridging the gap between academic learning and industry requirements.
+                        We specialize in providing comprehensive training programs and custom development solutions.
+                    </p>
+                    <a href="{% url 'about' %}" class="btn btn-outline">Learn More About Us</a>
+                </div>
+                <div class="about-stats slide-in">
+                    <div class="stat">
+                        <h3>500+</h3>
+                        <p>Students Trained</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat">
+                        <h3>5+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Expertise</h2>
+                <p>Technologies we master and teach</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>From basics to advanced concepts, data structures, and frameworks</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Cybersecurity</h3>
+                    <p>Ethical hacking, penetration testing, and security best practices</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Data Science</h3>
+                    <p>Data analysis, visualization, and statistical modeling</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-brain"></i>
+                    <h3>Machine Learning</h3>
+                    <p>ML algorithms, deep learning, and neural networks</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-robot"></i>
+                    <h3>Artificial Intelligence</h3>
+                    <p>AI development, NLP, computer vision, and automation</p>
+                </div>
+                <div class="skill-card fade-in">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Build responsive full-stack websites using modern frameworks and best practices.</p>
+            </div>
+            <div class="skill-card fade-in">
+                <i class="fa-brands fa-java"></i>
+                <h3>Java Development</h3>
+                <p>Develop scalable applications using Java, Spring Boot, and industry standards.</p>
+            </div>
+            <div class="skill-card fade-in">
+                <i class="fa-solid fa-cloud"></i>
+                <h3>Cloud Services</h3>
+                <p>Deploy and manage cloud solutions on AWS, Azure, and IBM Cloud platforms.</p>
+            </div>
+            <div class="skill-card fade-in">
+    <i class="fas fa-network-wired"></i>
+    <h3>Computer Networking</h3>
+    <p>Design, configure, and troubleshoot network systems for secure communication.</p>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Join thousands of students who have transformed their careers with GrewalCode</p>
+                <div class="cta-buttons">
+                    <a href="{% url 'services' %}" class="btn btn-primary">View Our Services</a>
+                    <a href="{% url 'contact' %}" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GrewalCode</h3>
+                <p>Empowering careers through expert training and innovative development solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/codegrewal/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@grewalcode" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/pravesh-grewal/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'team' %}">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="{% url 'services' %}">Python Training</a></li>
+                    <li><a href="{% url 'services' %}">Cybersecurity</a></li>
+                    <li><a href="{% url 'services' %}">AI & ML</a></li>
+                    <li><a href="{% url 'services' %}">Web Development</a></li>
+                    <li><a href="{% url 'services' %}">Cloud Computing</a></li>
+                    <li><a href="{% url 'services' %}">Java Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-envelope"></i> grewalcode@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 8683886798</p>
+                <p><i class="fas fa-map-marker-alt"></i> Noida, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GrewalCode. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'app/js/script.js' %}"></script>
+</body>
+</html>

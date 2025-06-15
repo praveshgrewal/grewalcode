@@ -1,0 +1,445 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - GrewalCode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <button onclick="window.location.href='/'" style="background: none; border: none; font-size: inherit; color: inherit; cursor: pointer;">
+                <h2>GrewalCode</h2>
+            </button>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="{% url 'index' %}" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'about' %}" class="nav-link {% if request.path == '/about/' %}active{% endif %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'services' %}" class="nav-link {% if request.path == '/services/' %}active{% endif %}">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'team' %}" class="nav-link {% if request.path == '/team/' %}active{% endif %}">Team</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'testimonials' %}" class="nav-link {% if request.path == '/testimonials/' %}active{% endif %}">Testimonials</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'blog' %}" class="nav-link {% if request.path == '/blog/' %}active{% endif %}">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'contact' %}" class="nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive training programs and development services</p>
+        </div>
+    </section>
+
+<!-- Training Services -->
+<section class="training-services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Training Programs</h2>
+            <p>Expert-led courses designed for real-world success</p>
+        </div>
+        <div class="services-grid">
+            <!-- Python Programming -->
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fab fa-python"></i></div>
+                <h3>Python Programming</h3>
+                <p>Master Python from basics to advanced concepts including data structures, OOP, web frameworks, and automation.</p>
+                <ul class="service-features">
+                    <li>Fundamentals to Advanced</li>
+                    <li>Django & Flask Frameworks</li>
+                    <li>Data Analysis with Pandas</li>
+                    <li>Automation & Scripting</li>
+                </ul>
+                <div class="service-price">Book a Free Demo Session</div>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Enroll Now</a>
+            </div>
+
+            <!-- Cybersecurity -->
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Cybersecurity</h3>
+                <p>Comprehensive cybersecurity training covering ethical hacking, penetration testing, and security best practices.</p>
+                <ul class="service-features">
+                    <li>Ethical Hacking</li>
+                    <li>Penetration Testing</li>
+                    <li>Network Security</li>
+                    <li>Security Auditing</li>
+                </ul>
+                <div class="service-price">Customized Pricing Available</div>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Enroll Now</a>
+            </div>
+
+            <!-- AI & Machine Learning -->
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-brain"></i></div>
+                <h3>AI & Machine Learning</h3>
+                <p>Learn cutting-edge AI and ML techniques with hands-on projects using popular frameworks and libraries.</p>
+                <ul class="service-features">
+                    <li>Machine Learning Algorithms</li>
+                    <li>Deep Learning & Neural Networks</li>
+                    <li>TensorFlow & PyTorch</li>
+                    <li>Computer Vision & NLP</li>
+                </ul>
+                <div class="service-price">Customized Pricing Available</div>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Enroll Now</a>
+            </div>
+
+            <!-- Data Science -->
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+                <h3>Data Science</h3>
+                <p>Complete data science bootcamp covering statistics, data analysis, visualization, and predictive modeling.</p>
+                <ul class="service-features">
+                    <li>Statistical Analysis</li>
+                    <li>Data Visualization</li>
+                    <li>Predictive Modeling</li>
+                    <li>Big Data Technologies</li>
+                </ul>
+                <div class="service-price">Customized Pricing Available</div>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Enroll Now</a>
+            </div>
+
+            <!-- Web Development -->
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Full-stack web development training covering modern frameworks, databases, and deployment strategies.</p>
+                <ul class="service-features">
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>React, Node.js</li>
+                    <li>Database Design</li>
+                    <li>Cloud Deployment</li>
+                </ul>
+                <div class="service-price">Book a Free Demo Session</div>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Enroll Now</a>
+            </div>
+
+            <!-- Cloud Computing -->
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-cloud"></i></div>
+                <h3>Cloud Computing</h3>
+                <p>Master cloud platforms including AWS, Azure, and Google Cloud with hands-on labs and certification prep.</p>
+                <ul class="service-features">
+                    <li>AWS, Azure, GCP</li>
+                    <li>Cloud Architecture</li>
+                    <li>DevOps & CI/CD</li>
+                    <li>Certification Prep</li>
+                </ul>
+                <div class="service-price">Customized Pricing Available</div>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Enroll Now</a>
+            </div>
+
+            <!-- DevOps & CI/CD -->
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                <h3>DevOps & CI/CD</h3>
+                <p>Gain deep knowledge of DevOps practices, tools like Docker, Kubernetes, Jenkins, and continuous deployment workflows.</p>
+                <ul class="service-features">
+                    <li>Docker & Kubernetes</li>
+                    <li>Jenkins & GitHub Actions</li>
+                    <li>CI/CD Pipelines</li>
+                    <li>Monitoring & Logging</li>
+                </ul>
+                <div class="service-price">Customized Pricing Available</div>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Enroll Now</a>
+            </div>
+
+            <!-- Ethical Hacking Bootcamp -->
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-user-secret"></i></div>
+                <h3>Ethical Hacking Bootcamp</h3>
+                <p>Intensive bootcamp focused on real-world hacking techniques, defense strategies, and security tools.</p>
+                <ul class="service-features">
+                    <li>Footprinting & Reconnaissance</li>
+                    <li>Vulnerability Assessment</li>
+                    <li>Exploitation & Payloads</li>
+                    <li>Reporting & Remediation</li>
+                </ul>
+                <div class="service-price">Customized Pricing Available</div>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Enroll Now</a>
+            </div>
+
+            <!-- Mobile App Development -->
+            <div class="service-card fade-in">
+                <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Mobile App Development</h3>
+                <p>Build Android & iOS apps using Flutter and React Native with practical project guidance.</p>
+                <ul class="service-features">
+                    <li>Flutter & Dart</li>
+                    <li>React Native Basics</li>
+                    <li>UI/UX Design</li>
+                    <li>Firebase Integration</li>
+                </ul>
+                <div class="service-price">Book a Free Demo Session</div>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+ <!-- Development Services -->
+<section class="development-services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Development Services</h2>
+            <p>Custom solutions for your business needs</p>
+        </div>
+        <div class="dev-services-grid">
+
+            <!-- Web App Development -->
+            <div class="dev-service-card slide-in">
+                <div class="dev-service-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Web Application Development</h3>
+                <p>Custom web applications built with modern technologies. From simple websites to complex enterprise solutions.</p>
+                <div class="dev-service-tech">
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>Python</span>
+                    <span>MongoDB</span>
+                </div> <br>
+                <br>
+                
+                
+
+                <a href="{% url 'contact' %}" class="btn btn-primary dev-btn">Enquiry Now</a>
+
+                    
+
+            </div>
+
+            <!-- Mobile App Development -->
+            <div class="dev-service-card slide-in">
+                <div class="dev-service-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Mobile App Development</h3>
+                <p>Native and cross-platform mobile applications for iOS and Android with seamless user experiences.</p>
+                <div class="dev-service-tech">
+                    <span>React Native</span>
+                    <span>Flutter</span>
+                    <span>iOS</span>
+                    <span>Android</span>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <a href="{% url 'contact' %}" class="btn btn-primary dev-btn">Enquiry Now</a>
+            </div>
+
+            <!-- AI/ML Model Development -->
+            <div class="dev-service-card slide-in">
+                <div class="dev-service-icon"><i class="fas fa-robot"></i></div>
+                <h3>AI/ML Model Development</h3>
+                <p>Custom machine learning models and AI solutions tailored to your specific business requirements and data.</p>
+                <div class="dev-service-tech">
+                    <span>TensorFlow</span>
+                    <span>PyTorch</span>
+                    <span>Scikit-learn</span>
+                    <span>OpenAI</span>
+                </div>
+                <br><br><br>
+                <br>
+            
+
+                <a href="{% url 'contact' %}" class="btn btn-primary dev-btn">Enquiry Now</a>
+            </div>
+
+            <!-- Data Analytics -->
+            <div class="dev-service-card slide-in">
+                <div class="dev-service-icon"><i class="fas fa-database"></i></div>
+                <h3>Data Analytics Solutions</h3>
+                <p>Comprehensive data analytics platforms with dashboards, reporting, and business intelligence capabilities.</p>
+                <div class="dev-service-tech">
+                    <span>Power BI</span>
+                    <span>Tableau</span>
+                    <span>Python</span>
+                    <span>SQL</span>
+                </div>
+                <br><br><br>
+                <br>
+
+                <a href="{% url 'contact' %}" class="btn btn-primary dev-btn">Enquiry Now</a>
+            </div>
+
+            <!-- DevOps & Cloud -->
+            <div class="dev-service-card slide-in">
+                <div class="dev-service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                <h3>DevOps & Cloud Deployment</h3>
+                <p>Robust CI/CD pipelines, containerization, and scalable cloud infrastructure deployments for modern applications.</p>
+                <div class="dev-service-tech">
+                    <span>Docker</span>
+                    <span>Kubernetes</span>
+                    <span>AWS</span>
+                    <span>GitHub Actions</span>
+                </div>
+                <br><br>
+                
+
+                <a href="{% url 'contact' %}" class="btn btn-primary dev-btn">Enquiry Now</a>
+            </div>
+
+            <!-- E-commerce Solutions -->
+            <div class="dev-service-card slide-in">
+                <div class="dev-service-icon"><i class="fas fa-shopping-cart"></i></div>
+                <h3>E-commerce Platform Development</h3>
+                <p>Fully featured e-commerce websites with payment gateways, product management, and order processing.</p>
+                <div class="dev-service-tech">
+                    <span>Django</span>
+                    <span>Flask</span>
+                    <span>Stripe</span>
+                    <span>PayPal</span>
+                </div>
+                <br><br><br>
+
+                <a href="{% url 'contact' %}" class="btn btn-primary dev-btn">Enquiry Now</a>
+            </div>
+
+            <!-- Chatbot Development -->
+            <div class="dev-service-card slide-in">
+                <div class="dev-service-icon"><i class="fas fa-comments"></i></div>
+                <h3>Chatbot & Automation Solutions</h3>
+                <p>Smart conversational bots and task automation powered by AI to enhance customer engagement and workflow efficiency.</p>
+                <div class="dev-service-tech">
+                    <span>Dialogflow</span>
+                    <span>Rasa</span>
+                    <span>Python</span>
+                    <span>OpenAI</span>
+                </div>
+                <br>
+
+                <a href="{% url 'contact' %}" class="btn btn-primary dev-btn">Enquiry Now</a>
+            </div>
+
+            <!-- Cybersecurity -->
+            <div class="dev-service-card slide-in">
+                <div class="dev-service-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Cybersecurity & Audit Services</h3>
+                <p>Security audits, vulnerability assessments, and defense solutions to safeguard your applications and data.</p>
+                <div class="dev-service-tech">
+                    <span>OWASP</span>
+                    <span>Nmap</span>
+                    <span>Metasploit</span>
+                    <span>Burp Suite</span>
+                </div>
+                <br>
+
+                <a href="{% url 'contact' %}" class="btn btn-primary dev-btn">Enquiry Now</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Process</h2>
+                <p>How we deliver exceptional results</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <h4>Consultation</h4>
+                    <p>We understand your goals and requirements through detailed consultation.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">2</div>
+                    <h4>Planning</h4>
+                    <p>Create a customized learning path or development plan tailored to your needs.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">3</div>
+                    <h4>Execution</h4>
+                    <p>Deliver high-quality training or development with regular progress updates.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">4</div>
+                    <h4>Support</h4>
+                    <p>Provide ongoing support and maintenance to ensure long-term success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GrewalCode</h3>
+                <p>Empowering careers through expert training and innovative development solutions.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/codegrewal/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@grewalcode" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/pravesh-grewal/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'team' %}">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="{% url 'services' %}">Python Training</a></li>
+                    <li><a href="{% url 'services' %}">Cybersecurity</a></li>
+                    <li><a href="{% url 'services' %}">AI & ML</a></li>
+                    <li><a href="{% url 'services' %}">Web Development</a></li>
+                    <li><a href="{% url 'services' %}">Cloud Computing</a></li>
+                    <li><a href="{% url 'services' %}">Java Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-envelope"></i> grewalcode@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 8683886798</p>
+                <p><i class="fas fa-map-marker-alt"></i> Noida, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GrewalCode. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'app/js/script.js' %}"></script>
+</body>
+</html>
