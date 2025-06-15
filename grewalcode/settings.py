@@ -120,7 +120,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-ALLOWED_HOSTS = ['grewalcode.live', 'www.grewalcode.live']
+ALLOWED_HOSTS = ['grewalcode.live', 'www.grewalcode.live','grewalcode.onrender.com']
 
 
 
