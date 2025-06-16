@@ -145,3 +145,9 @@ TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
 TWILIO_PHONE_NUMBER = os.getenv('TWILIO_PHONE_NUMBER')
 TWILIO_TO_NUMBER = os.getenv('TWILIO_TO_NUMBER')
+
+
+if os.environ.get('RENDER') == 'true':
+    SECURE_SSL_REDIRECT = True  # Redirect all HTTP to HTTPS
+    SESSION_COOKIE_SECURE = True  # Secure cookies
+    CSRF_COOKIE_SECURE = True     # Secure CSRF cookies
