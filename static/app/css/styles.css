@@ -89,7 +89,7 @@ body {
 .bar {
   width: 28px;
   height: 3px;
-  background: #ffffff;
+  background: #000000;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
