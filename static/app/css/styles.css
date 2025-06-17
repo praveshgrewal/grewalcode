@@ -77,31 +77,82 @@ body {
     background: #2563eb;
 }
 
+/* Hide hamburger on desktop, show on mobile */
 .hamburger {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  padding: 5px;
 }
 
 .bar {
-  width: 25px;
+  width: 28px;
   height: 3px;
-  background-color: #333;
+  background: #ffffff;
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-.mobile-menu {
+/* Mobile menu default hidden */
+.nav-menu-mobile {
   display: none;
   flex-direction: column;
-  background: #fff;
-  padding: 10px;
-position: absolute;
-
+  background-color: #ffffff;
+  position: absolute;
+  top: 60px; /* Adjust according to navbar height */
+  right: 0;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  padding: 1rem 0;
 }
 
-.mobile-menu.active {
+/* Show when active */
+.nav-menu-mobile.active {
   display: flex;
+  animation: slideDown 0.3s ease forwards;
+}
+
+/* Mobile menu links */
+.nav-menu-mobile li {
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.nav-menu-mobile li a {
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-menu-mobile li a:hover {
+  color: #4f46e5;
+}
+
+/* Slide animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media query to enable on small screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none; /* Hide desktop nav on mobile */
+  }
 }
 
 /* Hero Section */
