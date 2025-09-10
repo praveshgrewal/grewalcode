@@ -43,7 +43,7 @@ If you’d like to improve UI/UX or add features, feel free to open an issue or 
 ## 📬 Contact
 - **Website:** [grewalcode.live](https://grewalcode.live/)  
 - **YouTube:** [GrewalCode](https://www.youtube.com/@GrewalCode)  
-- **Instagram:** [@GrewalCode](https://www.instagram.com/codegrewal/) *(update link)*  
+- **Instagram:** [@GrewalCode](https://www.instagram.com/codegrewal/) 
 
 ---
 
